@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html ng-app="firstApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Angular JS Sample App">
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial">
+    <meta name="author" content="Shashant Panwar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Sample App</title>
+    <script src="../angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Angular JS Sample Application</h1>
+    </header>
+    <nav>
+        <ul>
+            <a href="#">HTML</a> | <a href="#">CSS</a> | <a href="#">Angular JS</a>
+        </ul>
+    </nav>
+    <section>
+        <div ng-controller="firstCtrl">
+            <h3>Binding Using Module & Controller in main.js</h3>
+            <label>Name: </label>
+            <input type="text" placeholder="Enter name:" ng-model="username" value="{{username}}" />
+            <h3>{{fnHello() + ' ' + username}}!</h3>
+        </div>
+    </section>
+    <hr />
+    <footer>@2017 copyright Shashant</footer>
+</body>
+
+</html>

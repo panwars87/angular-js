@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html ng-app="DItest">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Angular JS Sample App">
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial">
+    <meta name="author" content="Shashant Panwar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Sample App</title>
+    <script src="../angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Angular JS Sample Application</h1>
+    </header>
+    <nav>
+        <ul>
+            <a href="#">HTML</a> | <a href="#">CSS</a> | <a href="#">Angular JS</a>
+        </ul>
+    </nav>
+    <hr />
+    <section>
+        <!-- Write your code here -->
+        <div ng-controller="DICtrl">
+            <label>Enter text(lower to upper): </label>
+            <input type="text" ng-model="lname" ng-blur="upper();"
+                    value="{{ lname | uppercase }}" />
+        </div>
+        <div ng-controller="DICtrl2">
+            <label>Enter text(upper to lower): </label>
+            <input type="text" ng-model="uname" ng-blur="lower();"
+                    value="{{ uname | lowercase }}" />
+        </div>
+    </section>
+    <hr />
+    <footer>@2017 copyright Shashant</footer>
+</body>
+
+</html>

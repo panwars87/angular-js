@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html ng-app="LunchCheck">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Angular JS Sample App">
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial">
+    <meta name="author" content="Shashant Panwar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Sample App</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Module1 Assignment</h1>
+    </header>
+    <hr />
+    <section>
+        <div ng-controller="LunchCheckController">
+            <h3>Please enter comma seperated Lunch Meal List.</h3>
+            <label>Meal List: </label>
+            <input type="text" ng-model="userinput"  />
+            Eg: Salad, Soup, Pasta (*Space will not be considered)
+            <br  /><br />
+            <button ng-click="check()">Check If Too Much</button>
+            <h4 style="color:{{ fontcolor }}">
+                {{ usermessage }}
+            </h4>
+        </div>
+    </section>
+    <hr />
+    <footer>@2017 copyright Shashant</footer>
+</body>
+
+</html>
