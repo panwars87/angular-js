@@ -7,29 +7,44 @@
     <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial">
     <meta name="author" content="Shashant Panwar">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angular JS Sample App</title>
+    <title>Lunch Checker</title>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .message {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
+
     <header>
         <h1>Module1 Assignment</h1>
     </header>
     <hr />
-    <section>
-        <div ng-controller="LunchCheckController">
-            <h3>Please enter comma seperated Lunch Meal List.</h3>
-            <label>Meal List: </label>
-            <input type="text" ng-model="userinput"  />
-            Eg: Salad, Soup, Pasta (*Space will not be considered)
-            <br  /><br />
-            <button ng-click="check()">Check If Too Much</button>
-            <h4 style="color:{{ fontcolor }}">
-                {{ usermessage }}
-            </h4>
-        </div>
-    </section>
+    <div class="container">
+        <section>
+            <div class="form-group" ng-controller="LunchCheckController">
+                <h3>Please enter comma seperated Lunch Meal List.</h3>
+                <label>Meal List: </label>
+                <input type="text" class="form-control"
+                    ng-model="userinput"
+                    placeholder="Eg: Salad, Soup, Pasta (*Space will not be considered)" />
+                <br />
+                <br />
+
+                <div class="form-group">
+                    <button class="btn btn-default" ng-click="check()">Check If Too Much</button>
+                </div>
+                <div class="form-group message">
+                    <p style="color:{{ fontcolor }}">{{ usermessage }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
     <hr />
     <footer>@2017 copyright Shashant</footer>
 </body>
