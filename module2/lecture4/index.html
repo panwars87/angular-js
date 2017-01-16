@@ -1,0 +1,40 @@
+<html ng-app="module2">
+<head>
+    <meta name="description" content="Angular JS Sample App" />
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial" />
+    <meta name="author" content="Shashant Panwar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS Sample App</title>
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <h1>Module2 - Ng-repeat & Filters</h1>
+    </header>
+    <hr />
+    <div class="container">
+        <section>
+            <div class="form-group" ng-controller="TestController">
+                <h3>Ng-Repeat</h3>
+                    <div class="form-group message">
+                        <input type="text" placeholder="Search List" ng-model="searchValue" />
+
+                        <ul>
+                            <li ng-repeat="todo in toDoList | filter : searchValue">
+                                {{todo}}
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="text" ng-model="todo"  placeholder="Add new todo" />
+                    <button class="btn btn-success" ng-click="addToDo()">Add</button>
+                </div>
+        </section>
+    </div>
+    <hr />
+    <footer>
+        @Copyright Shashant
+    </footer>
+</body>
+</html>

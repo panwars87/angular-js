@@ -1,0 +1,34 @@
+<html ng-app="module2">
+<head>
+    <meta name="description" content="Angular JS Sample App" />
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial" />
+    <meta name="author" content="Shashant Panwar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS Sample App</title>
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <h1>Module2 - Nested Controller</h1>
+    </header>
+    <hr />
+    <div class="container">
+        <section>
+            <div class="form-group" ng-controller="ParentController as parent">
+                Parent Value: {{ parent.value }}
+                <div class="form-group" ng-controller="ChildController as child">
+                    Child Value: {{ child.value }}
+                    <br  />
+                    Fixed parent value: {{ parent.fixedValue }}
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr />
+    <footer>
+        @Copyright Shashant
+    </footer>
+</body>
+</html>
