@@ -28,6 +28,10 @@
         var alreadyBoughtCtrl = this;
 
         alreadyBoughtCtrl.boughtList = ShoppingListCheckOffService.getAlreadyBought();
+
+        alreadyBoughtCtrl.reloadPage = function(){
+             window.location.reload(); 
+        }
     }
 
     function ShoppingListCheckOffService(toBuyItems, alreadyBought){
