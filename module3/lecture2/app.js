@@ -6,7 +6,7 @@
 var app = angular.module('module3', []);
 app.controller('MenuCategoriesController', MenuCategoriesController);
 app.service('MenuCategoriesService', MenuCategoriesService);
-app.constant('ApiBase', 'http://davids-restaurant.herokuapp.com');
+app.constant('ApiBase', 'https://davids-restaurant.herokuapp.com');
 
 MenuCategoriesController.$inject = ['MenuCategoriesService'];
 function MenuCategoriesController(MenuCategoriesService) {
