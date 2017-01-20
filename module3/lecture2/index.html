@@ -1,0 +1,48 @@
+<html ng-app="module3">
+<head>
+    <meta name="description" content="Angular JS Sample App" />
+    <meta name="keywords" content="Angular, App, HTML, JavaScript, Tutorial" />
+    <meta name="author" content="Shashant Panwar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS Sample App</title>
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <h1>Module3 - $http</h1>
+    </header>
+    <hr />
+    <div class="container">
+        <section>
+            <div class="form-group" ng-controller="MenuCategoriesController as menu">
+                <div class="col-md-6">
+                    <ul>
+                        <li ng-repeat="category in menu.categories">
+                            <a href="" ng-click="menu.getMenu(category.short_name)">({{ category.short_name }})</a>
+                            {{category.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6" ng-show="menu.category">
+                    <b>Category Name:</b> {{ menu.category.name }} <br  />
+                    <b>Special Instruction:</b> {{ menu.category.special_instructions }} <br />
+                    <ul>
+                        <li ng-repeat="menuItem in menu.menu_items">
+                            <b>Item:</b> {{ menuItem.name }} <br />
+                            <b>Description:</b> {{ menuItem.description }} <br  />
+                            <b>Price for small-portion:</b> {{ menuItem.price_small }} <br />
+                            <b>Price for large-portion:</b> {{ menuItem.price_large }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr />
+    <footer>
+        Copyright 2016 Shashant
+    </footer>
+</body>
+</html>
