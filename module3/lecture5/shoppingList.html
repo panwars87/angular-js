@@ -1,0 +1,9 @@
+<h3>Title: {{ dCtrl.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in dCtrl.foundItems">
+    {{ item.quantity }} of {{ item.name }}
+    <button ng-click="dCtrl.badRemove($index);">Bad Remove Item</button>
+    <button ng-click="dCtrl.onRemove({index: $index});">Remove Item</button>
+  </li>
+</ol>
+<div class="error" ng-if="dCtrl.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>

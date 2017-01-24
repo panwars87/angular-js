@@ -7,6 +7,15 @@ var app = angular.module('module3', []);
 app.controller('MenuCategoriesController', MenuCategoriesController);
 app.service('MenuCategoriesService', MenuCategoriesService);
 app.constant('ApiBase', 'http://davids-restaurant.herokuapp.com');
+app.directive('category', category);
+
+function category() {
+  var ddo = {
+        //template: '<b>Name:</b> {{ menu.category.name }} <br  /> <b>Special Instruction\'s:</b> {{ menu.category.special_instructions }} <br />'
+        templateUrl: 'category.html'
+    }
+  return ddo;
+}
 
 MenuCategoriesController.$inject = ['MenuCategoriesService'];
 function MenuCategoriesController(MenuCategoriesService) {
@@ -20,10 +29,9 @@ function MenuCategoriesController(MenuCategoriesService) {
   });
 
   menu.getMenu = function(shortName) {
-      console.log(shortName);
       var menuPromise = MenuCategoriesService.getMenuForCategory(shortName);
       menuPromise.then(function (response) {
-          console.log(response.data);
+          //console.log(response.data);
           menu.category = response.data.category;
           menu.menu_items = response.data.menu_items;
       }).catch(function (error) {

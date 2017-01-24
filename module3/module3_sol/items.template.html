@@ -1,0 +1,16 @@
+<div class="table-responsive" ng-if="!dCtrl.isListEmpty()">
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Description</th>
+        </thead>
+        <tr ng-repeat="item in dCtrl.foundItems">
+            <td>{{ item.name }}</td>
+            <td>{{ item.short_name }}</td>
+            <td>{{ item.description }}</td>
+            <td><button class="btn btn-danger" ng-click="dCtrl.onRemove({index: $index})">Don't want this one!</button></td>
+        </tr>
+    </table>
+</div>
+<div class="error" ng-if="dCtrl.isListEmpty()">Nothing found!</div>
