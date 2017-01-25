@@ -17,17 +17,57 @@
            },
           controller: FoundItemsDirectiveController,
           controllerAs: 'dCtrl',
-          bindToController: true
+          bindToController: true,
+          link: FoundItemsDirectiveLink
       };
 
       return ddo;
+  }
+
+  function FoundItemsDirectiveLink(scope, element, attrs, controller) {
+
+   scope.$watch('dCtrl.isListEmpty()', function (newValue, oldValue) {
+     console.log("Old value: ", oldValue);
+     console.log("New value: ", newValue);
+
+     if (newValue === true) {
+       displayCookieWarning();
+     }
+     else {
+       removeCookieWarning();
+     }
+
+   });
+
+   function displayCookieWarning() {
+     // Using Angluar jqLite
+     // var warningElem = element.find("div");
+     // console.log(warningElem);
+     // warningElem.css('display', 'block');
+
+     // If jQuery included before Angluar
+     var warningElem = element.find("div.error");
+     warningElem.slideDown(900);
+   }
+
+
+   function removeCookieWarning() {
+     // Using Angluar jqLite
+     // var warningElem = element.find("div");
+     // warningElem.css('display', 'none');
+
+     // If jQuery included before Angluar
+     var warningElem = element.find("div.error");
+     warningElem.slideUp(900);
+   }
+
   }
 
   function FoundItemsDirectiveController() {
       var dCtrl = this;
 
       dCtrl.isListEmpty = function () {
-        if (dCtrl.foundItems.length > 0) {
+        if (dCtrl.foundItems && dCtrl.foundItems.length > 0) {
             return false;
         } else {
             return true;

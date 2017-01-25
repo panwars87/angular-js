@@ -5,6 +5,7 @@ h1 {
 .error{
     color: red;
     font-weight: bold;
+    display: none;
 }
 
 input[type="text"] {
